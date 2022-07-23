@@ -51,6 +51,34 @@ function display_menu($ulClass) {
 echo '</ul>';
 }
 
+function custom_style_var($field, $default) {
+	if( get_field($field, 'options') ){
+		echo get_field($field, 'options').';';
+	} else {
+		echo $default.';';
+	}
+}
+
+function theme_styles() { 
+
+	ob_start(); ?>
+
+	<style type="text/css">
+		:root {
+			--site-background: <?php custom_style_var('field_6029e016c2646', 'palegoldenrod');?>
+			--page-background: <?php custom_style_var('field_604436e836339', 'var(--site-background)');?>
+			--site-text: <?php custom_style_var('field_6044370f3633a', '#000000');?>
+			--page-text: <?php custom_style_var('field_604437513633b', '#000000');?>
+			--font-family: <?php if(get_field('site_font', 'options')){echo get_field('field_60b197c7e84b7', 'options')['font_family'].';';} else {echo '"Palatino Linotype", "Book Antiqua", Palatino, serif;';}?>
+		}
+	</style>
+
+	<?php 
+	echo ob_get_contents();
+}
+add_action( 'admin_head', 'theme_styles' );
+
+
 function view_posts($var) {
 	$post_loop = new WP_Query( array(
     'post_type' => $var,
@@ -125,12 +153,12 @@ while ( $post_loop->have_posts() ) : $post_loop->the_post();
 	?><a href="<?php the_permalink();?>"><?php
 	the_post_thumbnail();?></a>
 		<h3><a class="prime" href="<?php the_permalink();?>"><?php the_title();?></a></h3><br/>
-			<div><a class="prime" href="<?php the_permalink();?>"><?php the_field('writing');?>
+			<div><a class="prime" href="<?php the_permalink();?>"><?php echo get_the_content();?>
 				</a></div><?php
 		
 
 	
-		$post_content = get_field('writing');
+		$post_content = get_the_content();
 	
 		if ($var == 'poetry') {
 			$publication_category = 1;
@@ -178,7 +206,7 @@ while ( $post_loop->have_posts() ) : $post_loop->the_post();
 		}
 				$update_args = array(
 				    'ID'           => get_the_id(),
-      'post_content' => get_field('writing'),
+      'post_content' => get_the_content(),
       'post_excerpt' => 'excerpt',
 				    );
 				//wp_update_post($update_args);
@@ -340,9 +368,9 @@ function toc_flap($float, $var) {
 	if ($post_loop->have_posts()) : while ( $post_loop->have_posts() ) : $post_loop->the_post();
 	//echo '<p><a href="'.get_the_permalink().'">';
 	if (get_the_title() === '') {
-		$start = strpos(get_field('writing'), '<p>');
-$end = strpos(get_field('writing'), '</p>', $start);
-$paragraph = substr(get_field('writing'), $start, $end-$start+4);
+		$start = strpos(get_the_content(), '<p>');
+$end = strpos(get_the_content(), '</p>', $start);
+$paragraph = substr(get_the_content(), $start, $end-$start+4);
 	echo '<span><a href="'.get_the_permalink().'"><em>'.$paragraph.'</em></a></span>'; } else { echo '<p><a href="'.get_the_permalink().'">'.get_the_title().'</a></p>'; }
 		//echo '</a></p>';
 	endwhile;

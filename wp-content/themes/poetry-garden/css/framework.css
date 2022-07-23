@@ -1,0 +1,79 @@
+
+
+.absolute {position:absolute;}
+
+.align-center {align-items:center;}
+
+.cursor-pointer {cursor:pointer}
+
+.divider {
+	text-align: center;
+font-weight: 550;
+margin: 2% 0;
+}
+
+
+.fixed {position:fixed;}
+.fixed.bottom {bottom:3%;}
+
+.flex {display:flex !important;}
+
+.flex.wrap {flex-wrap:wrap;}
+
+.flex.column {flex-direction:column;}
+
+.flex.column.justify-right {align-items:flex-end;}
+.flex.column.justify-left {align-items:flex-start;}
+
+
+.full {width:100%;
+    height:100%;
+}
+
+.full-height {height:100vh;}
+
+.full-width {width:100%;}
+
+.half-width {width:50%;}
+
+.justify-center {justify-content:center;}
+.justify-right {justify-content:flex-end;}
+.justify-left {justify-content:flex-start;}
+.justify-space-between {justify-content:space-between;}
+
+.mid-width {width:75%;}
+
+.ml-2 {margin-left:2%;}
+
+.padding-mid {padding: 2%;}
+
+.relative {position:relative;}
+
+
+.sticky {
+    position:sticky;
+    width:100%;
+}
+
+.sticky.top, .fixed.top {top: 3%;}
+.sticky.bottom, .fixed.bottom {bottom: 3%;}
+.sticky .left, .fixed .left {padding-left:1.5%;}
+.sticky .right, .fixed .right {padding-right:1.5%;}
+
+@media only screen and (max-width: 1100px) and (orientation:portrait) {
+
+	.p-column {flex-direction:column;}
+	
+	.p-justify-start {justify-content: flex-start;}
+	
+	.p-justify-center {justify-content: center;}
+
+    .sticky.top, .sticky.bottom {
+        z-index: 9;
+        padding-top: 3%;
+        background: var(--site-background);
+        padding-bottom: 3%;
+        font-size:0.75em;
+    }
+
+}

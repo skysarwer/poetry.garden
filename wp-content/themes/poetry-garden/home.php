@@ -11,20 +11,9 @@
 	<?php wp_head(); ?>
 		<!--- <link rel="icon" href="<?php // if (get_field('site_icon','options')){ echo get_field('site_icon', 'options'); } else { 
 	//echo site_url().'/icon.png'; } ?>" type="image/png" /> --->
-<style>
-<?php 
-	function custom_style_var($field, $default) {
-		if(get_field($field, 'options')){echo get_field($field, 'options').';';} else {echo $default.';';}
-	}?>
-	:root {
-		--site-background: <?php custom_style_var('field_6029e016c2646', 'palegoldenrod');?>
- --page-background: <?php custom_style_var('field_604436e836339', '#FFFFFF');?>
-		--site-text: <?php custom_style_var('field_6044370f3633a', '#000000');?>
-			--page-text: <?php custom_style_var('field_604437513633b', '#000000');?>
-				--font-family: <?php if(get_field('site_font', 'options')){echo get_field('field_60b197c7e84b7', 'options')['font_family'].';';} else {echo '"Palatino Linotype", "Book Antiqua", Palatino, serif;';}?>
-	}
-	</style>
-</head>;<body>
+<?php theme_styles();?>
+</head>
+<body>
 	<?php
 	
 	/**

@@ -45,8 +45,6 @@ if( $discussion_disable && in_array('hide_post', $discussion_disable) ) {
 	} else {
 		$hide_discussion = false;
 	}
-	
-	
 
 	$pref_location = get_field('pref_location', 'options');
 	if (!$pref_location) {
@@ -91,8 +89,8 @@ $Abstract_location = get_field('Abstract_location', 'options');
 		pageflap_trigger($hide_ata, 'ata', 'top_left', $ata_location, 'verso'); 
 		pageflap_trigger($hide_Abstract, 'abst', 'top_left', $Abstract_location, 'verso');
 		pageflap_trigger($hide_discussion, 'discussion', 'top_left', $discussion_location, 'verso');
-	?>
-</div>
+		?>
+	</div>
 	<div class="right flex justify-right half-width">
 		<?php 
 		pageflap_trigger($hide_toc, 'toc', 'top_right', $toc_location, 'recto');
@@ -108,18 +106,11 @@ $Abstract_location = get_field('Abstract_location', 'options');
 	<?php the_post_thumbnail();?>
 	<div>
 		<h3><?php the_title();?></h3><br/>
-		<?php echo get_field('writing');?>
+		<?php echo get_the_content();?>
 		<div class="overlay"></div>
 	</div>
 </main>
 <br>
-<!---
-<main id="section" class="relative">
-	<h3>
-		Discussion
-	</h3><br/>
-	<?php // if (is_single ()) comments_template (); ?>
-</main> --->
 <div class="flex justify-space-between full-width sticky bottom">
 	<div class="left flex justify-left half-width">
 		<?php

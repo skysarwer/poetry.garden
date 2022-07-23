@@ -42,7 +42,7 @@ function cptui_register_my_cpts() {
 		"rewrite" => [ "slug" => "poetry", "with_front" => true ],
 		"query_var" => true,
 		"menu_position" => 1,
-		"supports" => [ "title", "thumbnail", "comments", "buddypress-activity" ],
+		"supports" => [ "title", "editor", "thumbnail", "comments", "buddypress-activity" ],
 		'bp_activity' => array(
         'comment_action_id' => 'new_poetry_comment',             // The activity type for comments
     ),

@@ -3,21 +3,6 @@
     "title": "General Customize Fields",
     "fields": [
         {
-            "key": "field_60978e42473dd",
-            "label": "",
-            "name": "",
-            "type": "column",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "column-type": "1_4"
-        },
-        {
             "key": "field_6029e016c2646",
             "label": "Site Background Color",
             "name": "background_color",
@@ -30,7 +15,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#EEE8AA"
+            "default_value": "#EEE8AA",
+            "enable_opacity": 1,
+            "return_format": "string"
         },
         {
             "key": "field_6044370f3633a",
@@ -45,22 +32,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#000000"
-        },
-        {
-            "key": "field_60978e54473de",
-            "label": "",
-            "name": "",
-            "type": "column",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "column-type": "1_4"
+            "default_value": "#000000",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_604436e836339",
@@ -75,7 +49,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#FFFFFF"
+            "default_value": "#FFFFFF",
+            "enable_opacity": false,
+            "return_format": "string"
         },
         {
             "key": "field_604437513633b",
@@ -86,77 +62,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "0",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "default_value": "#000000"
-        },
-        {
-            "key": "field_60b1989d16ae3",
-            "label": "",
-            "name": "",
-            "type": "column",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "column-type": "3_5"
-        },
-        {
-            "key": "field_60b197c7e84b7",
-            "label": "",
-            "name": "site_font",
-            "type": "Typography",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "type",
-                "id": ""
-            },
-            "display_properties": [
-                "font_family"
-            ],
-            "required_properties": [
-                "font_family"
-            ],
-            "font_size": 15,
-            "font_family": "\"Palatino Linotype\", \"Book Antiqua\", Palatino, serif",
-            "font_weight": 400,
-            "font_style": "normal",
-            "font_variant": "normal",
-            "font_stretch": "normal",
-            "line_height": "",
-            "letter_spacing": 0,
-            "text_align": "left",
-            "text_color": "#000",
-            "text_decoration": "none",
-            "text_transform": "none"
-        },
-        {
-            "key": "field_60b1e0c228d43",
-            "label": "",
-            "name": "show_poetry_garden_logo",
-            "type": "true_false",
-            "instructions": "Selecting this option will show the Poetry Garden logo with a link back to the main website in the bottom left corner of your site. Thank you for promoting the platform!",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Show Poetry Garden Logo",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "default_value": "#000000",
+            "enable_opacity": false,
+            "return_format": "string"
         }
     ],
     "location": [
@@ -172,9 +84,10 @@
     "position": "normal",
     "style": "seamless",
     "label_placement": "top",
-    "instruction_placement": "field",
+    "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622271159
+    "show_in_rest": 0,
+    "modified": 1658554478
 }

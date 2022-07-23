@@ -17,20 +17,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php wp_head(); ?>
 		<!--- <link rel="icon" href="<?php // if (get_field('site_icon','options')){ echo get_field('site_icon', 'options'); } else { 
 	//echo site_url().'/icon.png'; } ?>" type="image/png" /> --->
-<style>
-<?php 
+	<?php 
 	global $site_author;
-	function custom_style_var($field, $default) {
-		if(get_field($field, 'options')){echo get_field($field, 'options').';';} else {echo $default.';';}
-	}?>
-	:root {
-		--site-background: <?php custom_style_var('field_6029e016c2646', 'palegoldenrod');?>
- --page-background: <?php custom_style_var('field_604436e836339', 'var(--site-background)');?>
-		--site-text: <?php custom_style_var('field_6044370f3633a', '#000000');?>
-			--page-text: <?php custom_style_var('field_604437513633b', '#000000');?>
-			--font-family: <?php if(get_field('site_font', 'options')){echo get_field('field_60b197c7e84b7', 'options')['font_family'].';';} else {echo '"Palatino Linotype", "Book Antiqua", Palatino, serif;';}?>
-	}
-	</style>
+	theme_styles();
+	?>
+
 </head>
 
 <body>
@@ -59,7 +50,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 			<div class="overlay absolute full">
 			
-		</div>
+			</div>
 	</div>
 	<div id="framework">
 		<div class="overlay">
