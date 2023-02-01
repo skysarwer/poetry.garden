@@ -8,5 +8,6 @@ wp-content/themes/*
 !wp-content/themes/poetry-garden-roots
 !wp-content/plugins
 wp-content/plugins/*
+!wp-content/plugins/pty-gdn-syndication
 !wp-content/plugins/bp-custom.php
 
