@@ -21,6 +21,13 @@ body::-webkit-scrollbar-thumb {
 	background: var(--site-text);
 }
 */
+
+
+
+:root {
+	--padding-control: 1em;
+}
+
 * {
 	font-family:var(--font-family);
 }
@@ -86,13 +93,10 @@ svg .fnt0 {
 	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif !important;
 }
 
-
-
-
-
-
-#framework {width:100%;
-min-height:100vh;
+#framework {
+	width:100%;
+	min-height:100vh;
+	/*overflow-x: hidden;*/
 }
 
 .front-title {
@@ -127,10 +131,10 @@ h3.sig {
 }
 
 label.sideNav svg {
-	width: 2rem;
-height: 2rem;
-padding-left: 0.375rem;
-padding-right: 0.375rem;
+	width:1.5rem;
+	height:1.5rem;
+	padding-left: 0.375rem;
+	padding-right: 0.375rem;
 }
 
 label.x {    transform: rotate(45deg);
@@ -141,11 +145,19 @@ right: 4%;
 	-webkit-text-stroke: 0.25px var(--page-background);
 }
 
-main {margin: 5% auto;
-background: var(--page-background);
-padding: 6%;
-box-sizing: border-box;
-width: 60%;}
+main {
+	margin: 3em auto;
+	background: var(--page-background);
+	padding: var(--padding-control);
+	box-sizing: border-box;
+	width: 95%; 
+}
+
+main::after {
+	content: '';
+	display: table;
+	clear: both;
+}
 
 main img {width:auto;
 max-height:15rem;}
@@ -161,8 +173,8 @@ margin: 0;}
 }
 
 .modal-input, .pageflap {display:none;}
-.modal-input.left:checked ~ main {margin-left:32%;}
-.modal-input.right:checked ~ main {right:13%;}
+/*.modal-input.left:checked ~ main {left:0;}
+.modal-input.right:checked ~ main {right:0;}*/
 
 .modal-input.ToC:checked ~ .pageflap.ToC {display:flex;}
 .modal-input.AtA:checked ~ .pageflap.AtA {display:flex;}
@@ -182,7 +194,7 @@ top: 0;
 background: var(--page-background);
 padding: 2%;
 z-index: 10;
-width: 25%;
+width:97.5%;
 height: 100%;
 flex-direction:column;
 overflow-y:auto;
@@ -225,6 +237,8 @@ box-sizing: content-box;
 	background:var(--site-background);
 }
 
+.sig {text-align:center;}
+
 .sideNav.verso {flex-direction:row-reverse;}
 
 .toc-list {
@@ -232,23 +246,48 @@ box-sizing: content-box;
 	top:2%;
 }
 
-@media only screen and (max-width: 1100px) and (orientation:portrait) {
+@media only screen and (min-width: 380px) {
+	main { 
+		--padding-control: 2em;
+	}
+}
+
+@media only screen and (min-width: 480px) {
 	
-	main { width: 95%; }
+	main { 
+		--padding-control:  3em;
+	}
+}
+
+@media only screen and (min-width: 1080px) {
 	
-	.modal-input.left:checked ~ main {margin-left:0;}
-	
-	.modal-input.right:checked ~ main {right:0;}
-	
-	.pageflap {
-		width:97.5%;
+	main { 
+		width: calc(43em + 5vw);
+		--padding-control:  4em;
 	}
 	
-	.sig {text-align:center;}
+	.modal-input.left:checked ~ main {left:13%;}
+	.modal-input.right:checked ~ main {right:13%;}
+	.modal-input.left:checked ~ .modal-input.right:checked ~ main {left: 0;}
+
+	
+	.pageflap {
+		width: 25%;
+	}
+	
+	.sig {text-align:left;}
 	
 	label.sideNav svg {
-		width:1.5rem;
-		height:1.5rem;
+		width: 2rem;
+		height: 2rem;
 	}
 	
 }
+
+@media only screen and (min-width: 1280px) {
+	main {
+		width: calc(48em + 2vw);
+		--padding-control: 5em;
+	}
+}
+

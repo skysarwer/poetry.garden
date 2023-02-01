@@ -304,8 +304,13 @@ function abst($float) {
 
 
 function discussion_flap($float) {
-	echo '<input type="checkbox" id="Disc" class="modal-input right Disc"><div class="pageflap fixed Disc '.$float.'"><span class="flex justify-center"><label for="Disc" class="x cursor-pointer">+</label></span><h3>Discussion</h3>';
-	comments_template();
+	echo '<input type="checkbox" id="Disc" class="modal-input right Disc">
+		<div class="pageflap fixed Disc '.$float.'">
+			<span class="flex justify-center">
+				<label for="Disc" class="x cursor-pointer">+</label>
+			</span>
+			<h3>Discussion</h3>';
+			comments_template();
 	echo '</div>';
 }
 
@@ -369,9 +374,15 @@ function toc_flap($float, $var) {
 	//echo '<p><a href="'.get_the_permalink().'">';
 	if (get_the_title() === '') {
 		$start = strpos(get_the_content(), '<p>');
-$end = strpos(get_the_content(), '</p>', $start);
-$paragraph = substr(get_the_content(), $start, $end-$start+4);
-	echo '<span><a href="'.get_the_permalink().'"><em>'.$paragraph.'</em></a></span>'; } else { echo '<p><a href="'.get_the_permalink().'">'.get_the_title().'</a></p>'; }
+		$end = strpos(get_the_content(), '</p>', $start);
+		$paragraph = substr(get_the_content(), $start, $end-$start+4);
+		if (! $start) {
+			$paragraph = '';
+		}
+		echo '<span><a href="'.get_the_permalink().'"><em>'.$paragraph.'</em></a></span>'; 
+	} else { 
+		echo '<p><a href="'.get_the_permalink().'">'.get_the_title().'</a></p>'; 
+	}
 		//echo '</a></p>';
 	endwhile;
 	wp_reset_postdata();

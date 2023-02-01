@@ -23,22 +23,10 @@ if ( post_password_required() ) {
 	return;
 }
 
-/**
- * generate_before_comments hook.
- *
- * @since 0.1
- */
-do_action( 'generate_before_comments' );
 ?>
 <div id="comments">
 
 	<?php
-	/**
-	 * generate_inside_comments hook.
-	 *
-	 * @since 1.3.47
-	 */
-	do_action( 'generate_inside_comments' );
 
 	if ( have_comments() ) :
 		$comments_number = get_comments_number();
@@ -117,12 +105,7 @@ do_action( 'generate_before_comments' );
 
 	endif;
 
-	// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
-	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-		?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'generatepress' ); ?></p>
-		<?php
-	endif;
+
 
 	comment_form();
 	?>

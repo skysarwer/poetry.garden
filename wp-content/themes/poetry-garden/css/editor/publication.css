@@ -1,6 +1,11 @@
+:root {
+	--padding-control: 1em;
+}
+
 body .edit-post-visual-editor__content-area
  {
     background: var(--site-background);
+    font-size: 1.31em;
 }
 
 body .edit-post-visual-editor__content-area * {
@@ -21,11 +26,51 @@ html body .editor-styles-wrapper h1 {
     line-height: unset !important;
 }
 
-body .edit-post-visual-editor__content-area .is-desktop-preview{
-    margin: 5% auto !important;
+body .edit-post-visual-editor__content-area .is-desktop-preview,
+body .edit-post-visual-editor__content-area .is-tablet-preview,
+body .edit-post-visual-editor__content-area .is-mobile-preview {
+    margin: 3em auto !important;
     background: var(--page-background) !important;
-    padding: 6%;
+    padding: var(--padding-control);
     box-sizing: border-box;
-    width: 60% !important;
     height: unset !important;
+}
+
+body .edit-post-visual-editor__content-area .is-desktop-preview .editor-styles-wrapper.block-editor-writing-flow {
+    padding: 0;
+}
+
+body .edit-post-visual-editor__content-area .is-desktop-preview{
+    --padding-control: 4em;
+    width: calc(43em + 5vw) !important; 
+}
+
+body .edit-post-visual-editor__content-area .is-tablet-preview {
+    --padding-control: 4em;
+    width: 95% !important;
+}
+
+body .edit-post-visual-editor__content-area .is-mobile-preview {
+    width: 95% !important;
+}
+
+
+@media only screen and (min-width: 380px) {
+	main { 
+		--padding-control: 2em;
+	}
+}
+
+@media only screen and (min-width: 480px) {
+	
+	main { 
+		--padding-control:  3em;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	body .edit-post-visual-editor__content-area .is-desktop-preview {
+		width: calc(48em + 2vw) !important;
+		--padding-control: 5em;
+	}
 }

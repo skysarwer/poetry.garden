@@ -106,7 +106,7 @@ $Abstract_location = get_field('Abstract_location', 'options');
 	<?php the_post_thumbnail();?>
 	<div>
 		<h3><?php the_title();?></h3><br/>
-		<?php echo get_the_content();?>
+		<?php the_content();?>
 		<div class="overlay"></div>
 	</div>
 </main>

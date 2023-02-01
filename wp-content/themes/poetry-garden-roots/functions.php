@@ -69,9 +69,10 @@ add_filter('wpmu_active_signup', 'wpmu_limit_subsites');
 
 //require_once '/home/r00ts/public_html/wp-content/themes/poetry-garden/custom-post-types.php'; //fix this, add code to plugin
 
-require_once get_stylesheet_directory().'/template-functions.php';
-require_once get_stylesheet_directory().'/svg.php';
-require_once get_stylesheet_directory().'/media-profile-icons.php';
+require_once get_stylesheet_directory().'/inc/template-functions.php';
+require_once get_stylesheet_directory().'/inc/svg.php';
+require_once get_stylesheet_directory().'/inc/media-profile-icons.php';
+require_once get_stylesheet_directory().'/inc/bp-custom.php';
 
 if( function_exists('acf_add_local_field_group') ):
 
